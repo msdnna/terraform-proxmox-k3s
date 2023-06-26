@@ -2,7 +2,7 @@ terraform {
   required_providers {
     proxmox = {
       source = "Telmate/proxmox"
-      version = "2.9.3"
+      version = "2.9.11"
     }
 
     macaddress = {
@@ -26,8 +26,7 @@ provider proxmox {
 }
 
 module "k3s" {
-  source  = "fvumbaca/k3s/proxmox"
-  version = ">= 0.0.0, < 1" # Get latest 0.X release
+  source  = "github.com/msdnna/terraform-proxmox-k3s"
 
   authorized_keys_file = "authorized_keys"
 
